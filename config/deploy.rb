@@ -1,17 +1,17 @@
 set :application, "testapp"
-set :repository,  "https://tausifahmed@github.com/tausifahmed/testrepo.git"
+set :repository,  "<git repo url>"
 set :deploy_to, "/var/www/html/testrepo/testapp"
 set :document_root, "/var/www/html/testrepo/current"
 set :port, 30000
 
 set :scm, :git
-set :scm_username, "tausifahmed"
-set :scm_password, "hotmail1"
+set :scm_username, "<git username>"
+set :scm_password, "<git password>"
 set :scm_checkout, "clone"
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-set :user, "confiz"
-#set :password, "C0nf1z@"
+set :user, "<user>"
+#set :password, "<password>"
 set :use_sudo, false
 #set :ssh_options, {:forward_agent => true}
 ssh_options[:forward_agent] = true
@@ -19,9 +19,9 @@ ssh_options[:forward_agent] = true
 #default_run_options[:pty] = true 
 
 
-role :web, "108.166.105.123"                          # Your HTTP server, Apache/etc
-role :app, "108.166.105.123"                          # This may be the same as your `Web` server
-role :db,  "108.166.105.123", :primary => true # This is where Rails migrations will run
+role :web, "<Destination IP>"                          # Your HTTP server, Apache/etc
+role :app, "<Destination IP>"                          # This may be the same as your `Web` server
+role :db,  "<Destination IP>", :primary => true # This is where Rails migrations will run
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
